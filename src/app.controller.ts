@@ -13,6 +13,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  /* handle line message webhook */
   @Post("/line-message-handler")
   async postLineMessageHandler(@Body() jsonBody: object, @Headers() header: Headers){
     const hmacCode = this.appService.getHmacEncode(JSON.stringify(jsonBody));
@@ -25,5 +26,16 @@ export class AppController {
     }
     const jsonResponse = await this.appService.lineMessageWebhookHandler(jsonBody, header);
     return jsonResponse;
+  }
+
+  /* 
+  {
+    message: <STR>, 
+  }
+  */
+  @Post("/send-push-message")
+  async postSendPushMessage(@Body() jsonBody: object, @Headers() header: Headers){
+    const sessionId = header["session-id"];
+    this.appService.lineSendPushMessage(jsonBody["message"]);
   }
 }
