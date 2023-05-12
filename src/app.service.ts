@@ -66,6 +66,20 @@ export class AppService {
         }, 
       ], 
     }});
+
+    // try broadcast
+    // await this._lineApiRequest({endpoint: "https://api.line.me/v2/bot/message/broadcast", method: "POST", body: {
+    //   messages: [
+    //     {
+    //       type: "text", 
+    //       text: "Test Push Notice Broadcast", 
+    //     }, 
+    //     {
+    //       type: "text", 
+    //       text: "With two line", 
+    //     }, 
+    //   ], 
+    // }});
   }
 
   async _getAllUser(){
