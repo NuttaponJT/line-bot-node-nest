@@ -39,3 +39,8 @@ lerna-debug.log*
 
 # ENV
 .env
+
+# firebase
+.firebaserc
+firebase.json
+.firebase/*
