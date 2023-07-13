@@ -44,3 +44,4 @@ lerna-debug.log*
 .firebaserc
 firebase.json
 .firebase/*
+public
